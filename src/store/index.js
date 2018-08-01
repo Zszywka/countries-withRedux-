@@ -1,13 +1,12 @@
 //dodanie store'a
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import reducers from '../reducers/index';
 import DevTools from '../DevTools';
 
 //przekazać reducer jako argument funkcji createStore,
 const store = createStore(
-  reducers
+  reducers,
+  DevTools.instrument()
 );
 //następnie go wyeksportować
 export default store;
-
-//teraz mozemy uzyc metody store.dispatch.
