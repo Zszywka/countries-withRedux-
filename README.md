@@ -4,6 +4,8 @@ This project was bootstrapped with Create React App.
 You should install package:
 -> npm install bootstrap react-redux react-router@3.0.5 redux --save
 -> npm install --save uuid
+-> npm install --save bootstrap@^4.0.0-alpha.6  react-bootstrap@^0.32.1
+-> npm install --save react-bootstrap bootstrap@3
 1. create index.js
 2. write in the console:
 -> npm start
