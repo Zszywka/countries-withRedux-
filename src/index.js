@@ -9,6 +9,8 @@ import DevTools from './DevTools';
 //przekazac plik z akcjami
 import { getCountries } from './actions/actions-countries';
 
+//Komponent Provider może mieć tylko jednego potomka
+//wystarczy umieścić dodatkowy element <div> wewnątrz <Provider> i w nim umieścić <DevTools/>i<h1>.
 render(
   <Provider store={store}>
     <div>
