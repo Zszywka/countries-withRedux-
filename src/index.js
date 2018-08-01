@@ -8,17 +8,24 @@ import store from './store';
 import DevTools from './DevTools';
 //przekazac plik z akcjami
 import { getCountries } from './actions/actions-countries';
+//dodawanie routingu
+import { Router, Route, hashHistory } from 'react-router';
+import Navigation from './presentational/navigation.component';
 
 //Komponent Provider może mieć tylko jednego potomka
 //wystarczy umieścić dodatkowy element <div> wewnątrz <Provider> i w nim umieścić <DevTools/>i<h1>.
 render(
   <Provider store={store}>
-    <div>
-      <h1>Inicjalizacja projektu</h1>
-      <DevTools />
-    </div>
+
+    <Router history={hashHistory}>
+    //komponent Route odpowiedzialny za <Navigation>
+      <Route path='/' component={Navigation}>
+      //pozostale routery beda def. tutaj->przez co pojawia sie we wlasciwosciach props.children
+      </Route>
+    </Router>
+
   </Provider>,
   document.getElementById('root')
 );
 
-store.dispatch(getCountries());
+// store.dispatch(getCountries());
