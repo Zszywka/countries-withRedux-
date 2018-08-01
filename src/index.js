@@ -15,17 +15,22 @@ import routes from './routes';
 
 //Komponent Provider może mieć tylko jednego potomka
 //wystarczy umieścić dodatkowy element <div> wewnątrz <Provider> i w nim umieścić <DevTools/>i<h1>.
+// render(
+//   <Provider store={store}>
+//     //routes={routes} odwoluje sie do wycietej tam czesci
+//     <Router history={hashHistory} routes={routes}/>
+//     //komponent Route odpowiedzialny za <Navigation>
+//       //<Route path='/' component={Navigation}>
+//       //pozostale routery beda def. tutaj->przez co pojawia sie we wlasciwosciach props.children
+//       //</Route>
+//   </Provider>
+//   document.getElementById('root')
+// );
+
+// store.dispatch(getCountries());
 render(
   <Provider store={store}>
-    //routes={routes} odwoluje sie do wycietej tam czesci
-    <Router history={hashHistory} routes={routes}>
-    //komponent Route odpowiedzialny za <Navigation>
-      //<Route path='/' component={Navigation}>
-      //pozostale routery beda def. tutaj->przez co pojawia sie we wlasciwosciach props.children
-      //</Route>
-    </Router>
+    <Router history={hashHistory} routes={routes}/>
   </Provider>,
   document.getElementById('root')
 );
-
-// store.dispatch(getCountries());
